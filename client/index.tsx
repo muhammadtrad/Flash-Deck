@@ -1,10 +1,14 @@
-import * as React from 'react';
+import React from 'react';
 import { render } from 'react-dom';
-import App from './components/App';
+import { Provider } from 'react-redux';
+import App from './App';
+import store from './store';
 
 const style = require('./style.css');
 
 render(
-    <App compiler='TypeScript' framework='React' />,
+    <Provider store={store}>
+      <App compiler='TypeScript' framework='React' />
+    </Provider>,
     document.getElementById('root')
 );

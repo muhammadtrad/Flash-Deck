@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import MainContainer from './containers/MainContainer';
 
 class App extends Component {
   constructor(props) {
@@ -7,10 +7,9 @@ class App extends Component {
   }
 
   render() {
-    let meow: String = 'hello world!'
       return (
         <div>
-            <p>{meow}</p>
+            <MainContainer/>
         </div>
       );
   }
