@@ -3,7 +3,6 @@
 /* eslint-disable no-unused-vars */
 const models = require('../models/cardsModel');
 
-
 const cardsController = {};
 
 cardsController.addCard = (req, res, next) => {
@@ -23,8 +22,6 @@ cardsController.getCards = (req, res, next) => {
   })
   .catch((err) => next(err));
 };
-
-// add delete and update card
 
 cardsController.deleteCard = (req, res, next) => {
   models.Card.findOneAndDelete({ word: req.query.word })
