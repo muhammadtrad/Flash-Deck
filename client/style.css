@@ -7,7 +7,9 @@ h1 {
     text-align: center;
     color: rgb(114, 114, 245);
 }
-
+h1,h2,h3{
+    user-select: none;
+}
 
 .cardCreator{
     display: flex;
@@ -21,10 +23,12 @@ h1 {
 input{
     padding: 0.5rem;
     margin: 0.5rem;
-    background-color: lightblue;
+    background-color: rgb(173, 230, 225);
     outline-style: none;
     box-shadow: none;
     border: none;
+    font-weight: 600;
+    color: rgb(99, 99, 99);
 }
 
 .cardWrapper {
@@ -36,21 +40,69 @@ input{
 .btn:hover {
     background-color: rgb(94, 94, 255);
     transition: ease-in-out 0.5s;
-}
-
-.cardContainer{
-    display: flex;
-    justify-content: center;
-    min-width: 1000px;
-    margin-top: 1rem;
+    color: white;
+    cursor: pointer;
 }
 
 .wordDisplay p{
-    padding: 5rem;
-    background-color: white;
+    font-size: 24px;
+    user-select: none;
+    color: rgba(0, 0, 0, 0.685);
+    font-weight: 600;
+    word-wrap: normal;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    text-align: center;
 }
 
 .cardButtons{
     display: flex;
     justify-content: space-around;
+}
+button {
+    background-color: rgb(114, 114, 245);
+    border: thin; 
+    border-radius: .2rem;
+    outline: none;
+    padding: .5rem;
+    color:white;
+    font-weight: 600;
+}
+button:hover {
+    background-color: rgb(51, 52, 129);
+    transition: ease-in-out 0.5s;
+    cursor: pointer;
+}
+
+p:hover{
+    cursor: pointer;
+}
+
+.wordBox {
+    background-color: white;
+    width: 300px;
+    height: 200px;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.wordBox:hover{
+    cursor: pointer;
+}
+
+.titleBlock{
+    display: flex;
+    justify-content: flex-start;
+    color: rgb(99, 99, 99);
+}
+.currCard {
+    margin-right: 3rem;
+}
+
+.totalShuffle {
+    margin-left: 2rem;
 }

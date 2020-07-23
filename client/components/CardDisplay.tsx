@@ -21,11 +21,13 @@ const CardDisplay = (props) => {
             });
             let totalCards = cardStack.length;
             let show = cardStack[0].word;
+            let side = 'Word';
             updateDeck({
                 ...deckState,
                 cardStack,
                 totalCards,
                 show,
+                side,
             });
     });
     }, []);
@@ -35,11 +37,13 @@ const CardDisplay = (props) => {
        cardStack.sort(() => Math.random() - 0.5);
        let curr = 0;
        let show = cardStack[0].word;
+       let side = 'Word';
         updateDeck({
             ...deckState,
             cardStack,
             show,
             curr,
+            side,
         });
     }
 
@@ -49,12 +53,14 @@ const CardDisplay = (props) => {
             updateDeck({
                 ...deckState,
                 show: currObj.definition,
+                side: 'Definition',
             });
         }
         else {
             updateDeck({
                 ...deckState,
                 show: currObj.word,
+                side: 'Word',
             });
         }
     }
@@ -69,6 +75,7 @@ const CardDisplay = (props) => {
             ...deckState,
             curr,
             show,
+            side: 'Word',
         })
     }
 
@@ -82,20 +89,28 @@ const CardDisplay = (props) => {
             ...deckState,
             curr,
             show,
+            side: 'Word',
         })
     }
 
     return (
         <div className= "cardDisplay">
             <div>
+                <div className="totalShuffle">
                 <h3>Total Cards: {deckState.totalCards}</h3>
                 <button onClick={shuffle}>{deckState.toggle}</button>
+                </div>
                 <div className="cardWrapper">
                 <div className="cardContainer">
                     <div className="card">
-                        <h3>Current Card: {deckState.curr+1}</h3>
-                        <div className="wordDisplay">
-                            <p onClick={flip}>{deckState.show}</p>
+                            <div className="titleBlock">
+                             <h3 className="currCard">Current Card: {deckState.curr+1}</h3>
+                             <h3>{deckState.side}</h3>
+                            </div>
+                            <div className="wordBox" onClick={flip}>
+                                <div className="wordDisplay">
+                                <p >{deckState.show}</p>
+                            </div>
                         </div>
                         <div className="cardButtons">
                             <button onClick={previousCard}>Previous</button>
