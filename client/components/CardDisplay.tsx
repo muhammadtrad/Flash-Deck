@@ -88,17 +88,21 @@ const CardDisplay = (props) => {
     return (
         <div className= "cardDisplay">
             <div>
+                <h3>Total Cards: {deckState.totalCards}</h3>
                 <button onClick={shuffle}>{deckState.toggle}</button>
-                <div>
-                    <div>
-                      <h3>Total Cards: {deckState.totalCards}</h3>
-                    </div>
+                <div className="cardWrapper">
+                <div className="cardContainer">
                     <div className="card">
-                    <p className = "wordDisplay" onClick={flip}>{deckState.show}</p>
-                    <button onClick={previousCard}>Previous</button>
-                    <button onClick={nextCard}>Next</button> 
-                      <h3>Current Card: {deckState.curr+1}</h3>
+                        <h3>Current Card: {deckState.curr+1}</h3>
+                        <div className="wordDisplay">
+                            <p onClick={flip}>{deckState.show}</p>
+                        </div>
+                        <div className="cardButtons">
+                            <button onClick={previousCard}>Previous</button>
+                            <button onClick={nextCard}>Next</button> 
+                        </div>
                     </div>
+                </div>
                 </div>
             </div>
         </div>

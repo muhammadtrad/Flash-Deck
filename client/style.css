@@ -27,11 +27,30 @@ input{
     border: none;
 }
 
-.cardsDisplay {
-    display: block;
+.cardWrapper {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 .btn:hover {
     background-color: rgb(94, 94, 255);
     transition: ease-in-out 0.5s;
+}
+
+.cardContainer{
+    display: flex;
+    justify-content: center;
+    min-width: 1000px;
+    margin-top: 1rem;
+}
+
+.wordDisplay p{
+    padding: 5rem;
+    background-color: white;
+}
+
+.cardButtons{
+    display: flex;
+    justify-content: space-around;
 }
