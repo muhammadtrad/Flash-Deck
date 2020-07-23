@@ -6,26 +6,24 @@ import CardCreator from '../components/CardCreator';
 import CardDisplay from '../components/CardDisplay';
 
 const mapStateToProps = (state) => ({
-    
-
+    cardStack: state.cards.cardStack,
+    totalCards: state.cards.totalCards,
 });
 
 const mapDispatchToProps = (dispatch) => ({
     addCard: (wordObj) => {
         dispatch(actions.addCard(wordObj));
     },
-    deleteCard: (name) => {
-        dispatch(actions.deleteCard(name));
+    deleteCard: (word) => {
+        dispatch(actions.deleteCard(word));
     },
     modifyCard: (wordObj) => {
         dispatch(actions.modifyCard(wordObj));
-    },
-    getCards: () => {
-        dispatch(actions.getCards());
     }
 });
 
 class CardContainer extends Component {
+    props: any;
     constructor(props) {
         super(props);
     }
@@ -33,8 +31,8 @@ class CardContainer extends Component {
     render() {
         return(
             <div className="innerBox"> 
-                <CardCreator />
-                <CardDisplay />
+                <CardCreator addCard={this.props.addCard} deleteCard={this.props.deleteCard} modifyCard={this.props.modifyCard} />
+                <CardDisplay cardStack= {this.props.cardStack}/>
             </div>
         );
     }
