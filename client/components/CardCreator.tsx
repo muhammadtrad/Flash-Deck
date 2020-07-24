@@ -1,7 +1,7 @@
 import React from 'react';
 const { useState } = React;
 
-const CardCreator = (props) => {
+const CardCreator: React.FC = (props) => {
     const initialFormData = Object.freeze({
         word: "",
         definition: ""
@@ -49,9 +49,9 @@ const CardCreator = (props) => {
                     Definition:  
                     <input id="definition" type="text" name="definition" onChange={handleChange}/>
                 </label>
-                <input className="btn" type="submit" value="Add Card" onClick={handleSubmit} />
-                <input className="btn" type="submit" value="Modify" onClick={modifySubmit} />
-                <input className="btn" type="submit" value="Remove Card" onClick={deleteSubmit} />
+                <input  className="btn" type="submit" value="Add Card" onClick={handleSubmit} />
+                <input  className="btn" type="submit" value="Modify" onClick={modifySubmit} />
+                <input  className="btn" type="submit" value="Remove Card" onClick={deleteSubmit} />
             </form>                
             </div>
         </div>

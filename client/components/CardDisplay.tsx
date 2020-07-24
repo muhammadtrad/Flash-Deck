@@ -1,14 +1,23 @@
 import React from 'react';
 const { useState, useEffect } = React;
 
-const CardDisplay = (props) => {
-    const initialDeck = Object.freeze({ toggle: 'Shuffle Cards',
+interface StateNode {
+    toggle: string,
+    cardStack: Array<object>,
+    totalCards: null | number,
+    curr: number,
+    show: string,
+    side: string, 
+}
+const CardDisplay: React.FC = (props) => {
+    const initialDeck = Object.freeze<StateNode>({ toggle: 'Shuffle Cards',
                                         cardStack: props.cardStack,
                                         totalCards: null,
-                                        curr: 0});
+                                        curr: 0,
+                                        show: props.cardStack[0].word,
+                                        side: 'Word',});
     
-    const [deckState, updateDeck] = useState(initialDeck);
-    
+    const [deckState, updateDeck] = useState<StateNode>(initialDeck);
 
     useEffect(function effectFunction(){
     fetch(`/api/getCards`)

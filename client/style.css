@@ -1,11 +1,13 @@
 body {
-    background-color:lightblue;
+    /* background-color:lightblue; */
+    background: rgb(63,145,251);
+    background: linear-gradient(180deg, rgba(63,145,251,1) 0%, rgba(19,28,171,1) 69%, rgba(19,28,171,1) 83%);
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-
 }
 h1 {
     text-align: center;
-    color: rgb(114, 114, 245);
+    /* color: rgb(114, 114, 245); */
+    color: white;
 }
 h1,h2,h3{
     user-select: none;
@@ -14,10 +16,11 @@ h1,h2,h3{
 .cardCreator{
     display: flex;
     justify-content: center;
-    background-color: rgb(114, 114, 245);
     color: white;
     font-weight: 600;
     margin-bottom: 1rem;
+    background: rgb(77, 41, 163);
+    background: linear-gradient(180deg, rgb(55, 47, 98) 0%, rgb(64, 97, 206) 100%);
 }
 
 input{
@@ -60,7 +63,7 @@ input{
     justify-content: space-around;
 }
 button {
-    background-color: rgb(114, 114, 245);
+    background-color: rgb(75, 131, 253);
     border: thin; 
     border-radius: .2rem;
     outline: none;
@@ -97,7 +100,7 @@ p:hover{
 .titleBlock{
     display: flex;
     justify-content: flex-start;
-    color: rgb(99, 99, 99);
+    color: white;
 }
 .currCard {
     margin-right: 3rem;
@@ -105,4 +108,5 @@ p:hover{
 
 .totalShuffle {
     margin-left: 2rem;
+    color: white;
 }
